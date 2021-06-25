@@ -6,11 +6,11 @@ networks:
       name: network
 
 services:
-  vk-groups-backend:
-    container_name: vk-groups-backend
+  vk-group-backend:
+    container_name: vk-group-backend
     build:
       context: .
       dockerfile: ./build/nodejs/Dockerfile
     restart: "always"
-    image: registry.gitlab.com/aliasgame/vk-groups-backend:node_14
+    image: registry.gitlab.com/aliasgame/vk-group-backend:node_14
     env_file: ./build/.env.list

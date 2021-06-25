@@ -6,13 +6,14 @@ networks:
       name: ttfb
 
 services:
-  vk-groups-backend:
+  vk-group-backend:
     restart: "no"
     networks:
       default:
         aliases:
-          - groups.lc
+          - group.lc
     labels:
       - traefik.enable=true
-      - traefik.http.routers.groups.rule=Host(`groups.lc`)
-      - traefik.http.routers.groups.entrypoints=web
+      - traefik.http.routers.group.rule=Host(`group.lc`)
+      - traefik.http.routers.group.entrypoints=web
+      

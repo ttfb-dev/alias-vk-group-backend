@@ -1,8 +1,8 @@
 {
-  "name": "vk-groups-backend",
+  "name": "vk-group-backend",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "git@gitlab.com:aliasgame/vk-groups-backend.git",
+  "repository": "git@gitlab.com:aliasgame/vk-group-backend.git",
   "author": "Dmitry <bobrov@ttfb.dev>",
   "license": "MIT",
   "scripts": {

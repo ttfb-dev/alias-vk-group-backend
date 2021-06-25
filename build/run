@@ -7,7 +7,7 @@ export GROUP_ID=$(id -g)
 export $(cat ./build/.env.base)
 
 export COMPOSE_FILE=docker-compose.yml
-export COMPOSE_PROJECT_NAME=vk-groups-backend
+export COMPOSE_PROJECT_NAME=vk-group-backend
 
 docker-compose pull
 
