@@ -10,6 +10,7 @@ build_images:
   only:
     - master
   script:
+    - export GROUP_SECRET=$CI_GROUP_SECRET
     - ./build/run-build
     - ./build/run
   tags:
