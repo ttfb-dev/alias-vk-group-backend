@@ -16,17 +16,22 @@ const vkGroupHandler = {
       case 'confirmation':
         return 'b68706e2';
       case 'group_leave':
-        await prs.setUserParam(object.user_id, 'is_group_member', false)
+        await prs.setUserParam(object.user_id, 'is_group_member', false);
+        break;
       case 'group_join':
         await prs.setUserParam(object.user_id, 'is_group_member', true);
+        break;
       case 'donut_subscription_create':
         await prs.setUserParam(object.user_id, 'is_donut', true);
         await prs.setUserParam(object.user_id, 'donut_value', object.amount);
+        break;
       case 'donut_subscription_expired':
         await prs.setUserParam(object.user_id, 'is_donut', false);
         await prs.delUserParam(object.user_id, 'donut_value');
+        break;
       default:
         await logger.debug('got unused type', body);
+        break;
     }
     return 'ok';
   }
