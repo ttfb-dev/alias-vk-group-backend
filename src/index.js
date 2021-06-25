@@ -13,7 +13,7 @@ app.post('/callback', async (req, res) => {
   try {
     if (vkGroupHandler.checkCred(body.group_id, body.secret)) {
       const responseText = await vkGroupHandler.processRequest(body);
-      res.status(200).send(responseText ?? '');
+      res.status(200).send(responseText ?? 'ok');
       return ;
     }
     throw new Error('Wrong credentials');
