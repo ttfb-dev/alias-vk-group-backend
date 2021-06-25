@@ -1,0 +1,18 @@
+version: "3.6"
+
+networks:
+  default:
+    external:
+      name: ttfb
+
+services:
+  vk-groups-backend:
+    restart: "no"
+    networks:
+      default:
+        aliases:
+          - groups.lc
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.groups.rule=Host(`groups.lc`)
+      - traefik.http.routers.groups.entrypoints=web
