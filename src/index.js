@@ -9,6 +9,10 @@ app.use(bodyParser.json())
 app.post('/callback', async (req, res) => {
   const body = req.body;
   logger.debug('got body', {body})
+  if (body.hasOwnProperty('type')) {
+    res.status(200).send('b68706e2')
+    return ;
+  }
   res.status(200).send();
 })
 
