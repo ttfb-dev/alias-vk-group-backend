@@ -9,7 +9,6 @@ app.use(bodyParser.json())
 
 app.post('/callback', async (req, res) => {
   const body = req.body;
-  logger.debug('got body', {body})
   try {
     if (vkGroupHandler.checkCred(body.group_id, body.secret)) {
       const responseText = await vkGroupHandler.processRequest(body);
