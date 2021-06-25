@@ -17,7 +17,7 @@ const vkGroupHandler = {
         return 'b68706e2';
       case 'group_leave':
       case 'group_join':
-        prs.setUserParam(object.user_id, 'group_join_status', type);
+        await prs.setUserParam(object.user_id, 'group_join_status', type);
       default:
         await logger.debug('got new type', body);
     }
