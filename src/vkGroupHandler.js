@@ -6,7 +6,7 @@ const vkGroupHandler = {
   },
 
   processRequest: async (body) => {
-    if (!body.hasOwnProperty(type)) {
+    if (!body.hasOwnProperty('type')) {
       logger.debug('got untyped request', {handler: 'vkGroupHandler.processRequest', body})
       return ;
     }
