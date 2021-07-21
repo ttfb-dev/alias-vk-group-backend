@@ -1,29 +1,29 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import logger from './logger.js'
-import vkGroupHandler from './vkGroupHandler.js'
+import express from "express";
+import bodyParser from "body-parser";
+import logger from "./logger.js";
+import vkGroupHandler from "./vkGroupHandler.js";
 
-const app = express()
-const port = 80
-app.use(bodyParser.json())
+const app = express();
+const port = 80;
+app.use(bodyParser.json());
 
-app.post('/callback', async (req, res) => {
+app.post("/callback-group", async (req, res) => {
   const body = req.body;
   try {
     if (vkGroupHandler.checkCred(body.group_id, body.secret)) {
       const responseText = await vkGroupHandler.processRequest(body);
-      res.status(200).send(responseText ?? 'ok');
-      return ;
+      res.status(200).send(responseText ?? "ok");
+      return;
     }
-    throw new Error('Wrong credentials');
+    throw new Error("Wrong credentials");
   } catch ({ message }) {
-    logger.critical(message, {body});
+    logger.critical(message, { body });
   }
   res.status(200).send();
-})
+});
 
-app.get('/', async (req, res) => {
-    res.status(200).send();
-})
+app.get("/", async (req, res) => {
+  res.status(200).send();
+});
 
-app.listen(port)
+app.listen(port);
