@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import logger from "./logger.js";
+import vkAppHandler from "./vkAppHandler.js";
 import vkGroupHandler from "./vkGroupHandler.js";
 
 const app = express();
@@ -25,7 +26,7 @@ app.post("/callback-group", async (req, res) => {
 app.post("/callback-app", async (req, res) => {
   const body = req.body;
   try {
-    if (await vkAppHandler.checkCred(body.group_id, body.secret)) {
+    if (await vkAppHandler.checkCred(body)) {
       const responseText = await vkAppHandler.processRequest(body);
       res.status(200).send(responseText ?? "ok");
       return;
