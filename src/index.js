@@ -8,6 +8,7 @@ const app = express();
 const port = 80;
 app.use(bodyParser.json());
 app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/callback-group", async (req, res) => {
   const body = req.body;
