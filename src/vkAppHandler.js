@@ -4,9 +4,14 @@ import md5 from "md5";
 const vkAppHandler = {
   checkCred: async (body) => {
     let orderedString = {};
+    let sig;
     Object.keys(body)
       .sort()
       .forEach((key) => {
+        if (key === "sig") {
+          sig = body[key];
+          return;
+        }
         orderedString += `${key}=${body[key]}`;
       });
 
@@ -15,7 +20,6 @@ const vkAppHandler = {
     logger.debug("got app callback request", {
       string: orderedString,
       calcMd5: md5(orderedString),
-      body,
     });
 
     return false;
