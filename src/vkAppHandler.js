@@ -3,7 +3,7 @@ import md5 from "md5";
 
 const vkAppHandler = {
   checkCred: async (body) => {
-    let orderedString = {};
+    let orderedString;
     let sig;
     Object.keys(body)
       .sort()
