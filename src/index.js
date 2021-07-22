@@ -7,6 +7,7 @@ import vkGroupHandler from "./vkGroupHandler.js";
 const app = express();
 const port = 80;
 app.use(bodyParser.json());
+app.use(bodyParser.text());
 
 app.post("/callback-group", async (req, res) => {
   const body = req.body;
