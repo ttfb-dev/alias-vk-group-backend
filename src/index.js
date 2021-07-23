@@ -27,8 +27,6 @@ app.post("/callback-group", async (req, res) => {
 
 app.post("/callback-app", async (req, res) => {
   const body = req.body;
-  console.log(req);
-  console.log(req.body);
   try {
     if (vkAppHandler.checkCred(body)) {
       const response = await vkAppHandler.processRequest(body);
