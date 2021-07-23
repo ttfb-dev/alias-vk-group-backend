@@ -1,6 +1,15 @@
 import logger from "./logger.js";
 import md5 from "md5";
 
+const subscriptions = {
+  subscription_base: {
+    item_id: "subscription_base",
+    title: "Подписка на все наборы слов",
+    price: 10,
+    period: 30,
+  },
+};
+
 const vkAppHandler = {
   checkCred: (body) => {
     let orderedString = "";
@@ -21,10 +30,14 @@ const vkAppHandler = {
   },
 
   processRequest: async (body) => {
-    logger.debug("got app callback request", {
-      body,
-    });
-    return "ok";
+    const { notification_type, item } = body;
+    console.log(body);
+    switch (notification_type) {
+      case "get_subscription_test":
+      case "get_subscription":
+        return subscriptions[item];
+    }
+    return {};
   },
 };
 
