@@ -34,7 +34,6 @@ const vkAppHandler = {
 
   processRequest: async (body) => {
     const { notification_type, item } = body;
-    console.log(body);
     switch (notification_type) {
       case "get_subscription_test":
       case "get_subscription":
