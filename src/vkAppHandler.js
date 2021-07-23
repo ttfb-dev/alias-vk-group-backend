@@ -18,8 +18,9 @@ const vkAppHandler = {
     orderedString += process.env.GROUP_SECRET;
 
     await logger.debug("got app callback request", {
-      string: orderedString,
+      sig: sig,
       calcMd5: md5(orderedString),
+      string: md5(orderedString),
     });
 
     return false;
