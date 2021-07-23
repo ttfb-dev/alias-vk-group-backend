@@ -30,7 +30,7 @@ app.post("/callback-app", async (req, res) => {
   console.log(req);
   console.log(req.body);
   try {
-    if (await vkAppHandler.checkCred(body)) {
+    if (vkAppHandler.checkCred(body)) {
       const responseText = await vkAppHandler.processRequest(body);
       res.status(200).send(responseText ?? "ok");
       return;

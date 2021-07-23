@@ -2,7 +2,7 @@ import logger from "./logger.js";
 import md5 from "md5";
 
 const vkAppHandler = {
-  checkCred: async (body) => {
+  checkCred: (body) => {
     let orderedString = "";
     let sig = "";
     Object.keys(body)
@@ -17,13 +17,7 @@ const vkAppHandler = {
 
     orderedString += process.env.APP_SECRET;
 
-    await logger.debug("got app callback request", {
-      sig: sig,
-      calcMd5: md5(orderedString),
-      string: orderedString,
-    });
-
-    return false;
+    return sig === md5(orderedString);
   },
 
   processRequest: async (body) => {
