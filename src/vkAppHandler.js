@@ -7,6 +7,9 @@ const subscriptions = {
     title: "Подписка на все наборы слов",
     price: 10,
     period: 30,
+    trial_duration: 0,
+    photo_url:
+      "https://st2.depositphotos.com/1064024/10769/i/600/depositphotos_107694484-stock-photo-little-boy.jpg",
   },
 };
 
