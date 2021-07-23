@@ -38,6 +38,8 @@ const vkAppHandler = {
       case "get_subscription_test":
       case "get_subscription":
         return subscriptions[item];
+      default:
+        await logger.debug("got unused type", body);
     }
     return {};
   },
