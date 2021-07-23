@@ -11,6 +11,7 @@ build_images:
     - master
   script:
     - export GROUP_SECRET=$CI_GROUP_SECRET
+    - export APP_SECRET=$CI_APP_SECRET
     - ./build/run-build
     - ./build/run
   tags:
