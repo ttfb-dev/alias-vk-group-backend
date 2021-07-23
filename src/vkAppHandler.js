@@ -20,7 +20,7 @@ const vkAppHandler = {
     await logger.debug("got app callback request", {
       sig: sig,
       calcMd5: md5(orderedString),
-      string: md5(orderedString),
+      string: orderedString,
     });
 
     return false;
