@@ -31,8 +31,9 @@ app.post("/callback-app", async (req, res) => {
   console.log(req.body);
   try {
     if (vkAppHandler.checkCred(body)) {
-      const responseText = await vkAppHandler.processRequest(body);
-      res.status(200).send(responseText ?? "ok");
+      const response = await vkAppHandler.processRequest(body);
+      console.log("response", response);
+      res.status(200).json(response);
       return;
     }
     throw new Error("Wrong credentials");
