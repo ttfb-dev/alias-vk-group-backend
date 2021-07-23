@@ -15,7 +15,7 @@ const vkAppHandler = {
         orderedString += `${key}=${body[key]}`;
       });
 
-    orderedString += process.env.GROUP_SECRET;
+    orderedString += process.env.APP_SECRET;
 
     await logger.debug("got app callback request", {
       sig: sig,
