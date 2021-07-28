@@ -48,7 +48,7 @@ const vkGroupHandler = {
     if (needRefreshDatasets) {
       try {
         await fetch(
-          `http://logux-proxy:9000/user/${object.user_id}/refresh-datasets`
+          `http://logux-proxy:80/user/${object.user_id}/refresh-datasets`
         );
       } catch ({ message }) {
         logger.critical(message, {
