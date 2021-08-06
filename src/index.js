@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import logger from "./logger.js";
-import vkAppHandler from "./vkAppHandler.js";
+// import vkAppHandler from "./vkAppHandler.js";
 import vkGroupHandler from "./vkGroupHandler.js";
 
 const app = express();
@@ -24,7 +24,7 @@ app.post("/callback-group", async (req, res) => {
   }
   res.status(200).send();
 });
-
+/*
 app.post("/callback-app", async (req, res) => {
   const body = req.body;
   try {
@@ -39,7 +39,7 @@ app.post("/callback-app", async (req, res) => {
   }
   res.status(200).send();
 });
-
+*/
 app.get("/", async (req, res) => {
   res.status(200).send();
 });
