@@ -42,8 +42,8 @@ const vkGroupHandler = {
         await prs.delUserParam(object.user_id, "donut_value");
         needRefreshDatasets = true;
         break;
-      case "wall_repost": 
-        await logger.debug("got repost", body);
+      case "board_post_new": 
+        await logger.debug("got board post", body);
         break;
       default:
         await logger.debug("got unused type", body);
