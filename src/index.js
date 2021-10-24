@@ -1,14 +1,12 @@
 import express from "express";
-import bodyParser from "body-parser";
 import logger from "./logger.js";
-// import vkAppHandler from "./vkAppHandler.js";
 import vkGroupHandler from "./vkGroupHandler.js";
 
 const app = express();
 const port = 80;
-app.use(bodyParser.json());
-app.use(bodyParser.text());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.text());
+app.use(express.urlencoded({ extended: true }));
 
 app.post("/callback-group", async (req, res) => {
   const body = req.body;
@@ -24,22 +22,7 @@ app.post("/callback-group", async (req, res) => {
   }
   res.status(200).send();
 });
-/*
-app.post("/callback-app", async (req, res) => {
-  const body = req.body;
-  try {
-    if (vkAppHandler.checkCred(body)) {
-      const response = await vkAppHandler.processRequest(body);
-      res.status(200).json({ response });
-      return;
-    }
-    throw new Error("Wrong credentials");
-  } catch ({ message }) {
-    logger.critical(message, { body });
-  }
-  res.status(200).send();
-});
-*/
+
 app.get("/", async (req, res) => {
   res.status(200).send();
 });
