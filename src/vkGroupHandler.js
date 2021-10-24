@@ -19,6 +19,7 @@ const vkGroupHandler = {
       return "ok";
     }
     const { type, object } = body;
+    console.log(body);
     let needRefreshDatasets = false;
     switch (type) {
       case "confirmation":
