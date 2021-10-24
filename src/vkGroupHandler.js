@@ -44,7 +44,7 @@ const vkGroupHandler = {
         break;
       case "wall_repost": 
         await logger.debug("got repost", body);
-        breakl
+        break;
       default:
         await logger.debug("got unused type", body);
         break;
