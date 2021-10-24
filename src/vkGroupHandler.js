@@ -1,6 +1,7 @@
 import logger from "./logger.js";
 import prs from "./prs.js";
 import fetch from "node-fetch";
+import { Event, eventBus, EVENTS } from "./events.js";
 
 const vkGroupHandler = {
   checkCred: (group, secret) => {
@@ -19,7 +20,6 @@ const vkGroupHandler = {
       return "ok";
     }
     const { type, object } = body;
-    console.log(body);
     let needRefreshDatasets = false;
     switch (type) {
       case "confirmation":
@@ -43,7 +43,10 @@ const vkGroupHandler = {
         needRefreshDatasets = true;
         break;
       case "board_post_new": 
-        await logger.debug("got board post", body);
+        if (object.topic_id === 48193061) {
+          const event = new Event(EVENTS.USER_POST_REVIEW_HALLOWEEN_2021);
+          eventBus.newEvent(event, {userId: object.from_id});
+        }
         break;
       default:
         await logger.debug("got unused type", body);

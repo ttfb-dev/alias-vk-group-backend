@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@ttfb/aliasgame@^0.0.38":
-  version "0.0.38"
-  resolved "https://registry.yarnpkg.com/@ttfb/aliasgame/-/aliasgame-0.0.38.tgz#9a23e9a86ffab12afb4c4c4f1d2d249dfbfdc8ae"
-  integrity sha512-gIxWAfgHGxLowjDaHsdEwXRoFXeP5vUskUAp6s4Z6vn30pbtA8+bI+2w567ndjTBM+Fi/74YJiYZzMfMjeNTtA==
+"@ttfb/aliasgame@^0.0.63":
+  version "0.0.63"
+  resolved "https://registry.yarnpkg.com/@ttfb/aliasgame/-/aliasgame-0.0.63.tgz#de08faaac7e4ac90694e284d7c1f266931686fcc"
+  integrity sha512-rLSepdAPPD4x8xu4FgsSwr8NAXVGC/WBh3Gs/NsUf/N7a4XxnQSrduEqS+2OJ8Ngtdglo8OCHhRkV4T8829edQ==
   dependencies:
     node-fetch "^2.6.1"
 

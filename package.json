@@ -10,7 +10,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@ttfb/aliasgame": "^0.0.38",
+    "@ttfb/aliasgame": "^0.0.63",
     "express": "4.17.1",
     "md5": "^2.3.0",
     "node-fetch": "^2.6.1"
