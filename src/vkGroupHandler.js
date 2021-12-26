@@ -23,7 +23,7 @@ const vkGroupHandler = {
     let needRefreshDatasets = false;
     switch (type) {
       case "confirmation":
-        return "688064d5";
+        return "5eee8dea";
       case "group_leave":
         await prs.setUserParam(object.user_id, "is_group_member", false);
         needRefreshDatasets = true;
@@ -42,10 +42,10 @@ const vkGroupHandler = {
         await prs.delUserParam(object.user_id, "donut_value");
         needRefreshDatasets = true;
         break;
-      case "board_post_new": 
+      case "board_post_new":
         if (object.topic_id === 48193061) {
           const event = new Event(EVENTS.USER_POST_REVIEW_HALLOWEEN_2021);
-          eventBus.newEvent(event, {userId: object.from_id});
+          eventBus.newEvent(event, { userId: object.from_id });
         }
         break;
       default:
